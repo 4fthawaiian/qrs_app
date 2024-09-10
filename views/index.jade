@@ -3,11 +3,9 @@ extends layout
 block content
 
   <div class="container text-responsive">
-  <img src="/images/qr.svg" height="33px" width="33px" style="display: inline">
+  <img src="/images/qr.svg" height="44px" width="44px" style="display: inline">
   <h1 style="display: inline"> #{title} </h1><br>
-  <a href="/boxes">all boxes</a>
-  <p class="text-lg">looking for box #{code}</p>
-  p Output: <br>
+  <a href="/boxes">all boxes</a> -> <span class="text-lg">contents for box #{code}</span>
   <form action="/">
   <input type="hidden" value="#{code}" name="code">
   <textarea rows=10 cols=30 class="w-full" name="contents">#{output}</textarea><br>

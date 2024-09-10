@@ -7,8 +7,13 @@ block content
   <img src="/images/box.svg" height="33px" width="33px" style="display: inline">
   <h1 style="display: inline"> #{title} </h1><br>
   <hr>
-  each box in boxes
-    p <img src="/images/box.svg" height="24px" width="24px" style="display: inline"> <a href="/?code=#{box.value.index}">box #{box.value.index}</a> <span> #{box.title} </span>
+
+  table#boxes(style="width: 100%")
+    each box in boxes
+      tr
+        td(style="white-space: nowrap; vertical-align: top")
+          <img src="/images/box.svg" height="33px" width="33px" style="display: inline"> <a href="/?code=#{box.value.index}">box #{box.value.index}</a>&nbsp;
+        td #{box.title}
 
   </div>
 

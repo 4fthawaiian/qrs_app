@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
 	}
 	res.render('index', { title: 'code', code: req.query.code, output: boxOutput });
 });
+/* get boxes list */
 router.get('/boxes', function(req, res, next) {
 	var boxes = db.getAll();
 	var boxmap = boxes.map(b => {
