@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+  <div class="container text-responsive">
+
+  <img src="/images/box.svg" height="33px" width="33px" style="display: inline">
+  <h1 style="display: inline"> #{title} </h1><br>
+  <hr>
+  each box in boxes
+    p <img src="/images/box.svg" height="24px" width="24px" style="display: inline"> <a href="/?code=#{box.value.index}">box #{box.value.index}</a> <span> #{box.title} </span>
+
+  </div>
+
