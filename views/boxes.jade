@@ -1,19 +1,14 @@
 extends layout
 
 block content
-
-  <div class="container text-responsive">
-
-  <img src="/images/box.svg" height="33px" width="33px" style="display: inline">
-  <h1 style="display: inline"> #{title} </h1><br>
-  <hr>
-
-  table#boxes(style="width: 100%")
+  div#main.container.text-responsive
+    img(src="/images/box.svg" height="100em" width="100em" style="display: inline")
+    h1(style="display: inline") #{title} 
+    hr
     each box in boxes
-      tr
-        td(style="white-space: nowrap; vertical-align: top")
-          <img src="/images/box.svg" height="33px" width="33px" style="display: inline"> <a href="/?code=#{box.value.index}">box #{box.value.index}</a>&nbsp;
-        td #{box.title}
-
-  </div>
-
+      div.row.flex-wrap
+        div.col-auto
+          img(src="/images/box.svg" height="50em" width="50em")
+        div.col-auto
+          a(href='/?code='+box.value.index) box #{box.value.index}
+        div.col #{box.title}

@@ -1,14 +1,13 @@
 extends layout
 
 block content
-
-  <div class="container text-responsive">
-  <img src="/images/qr.svg" height="44px" width="44px" style="display: inline">
-  <h1 style="display: inline"> #{title} </h1><br>
-  <a href="/boxes">all boxes</a> -> <span class="text-lg">contents for box #{code}</span>
-  <form action="/">
-  <input type="hidden" value="#{code}" name="code">
-  <textarea rows=10 cols=30 class="w-full" name="contents">#{output}</textarea><br>
-  <button type="submit">Save</button>
-  </form>
-  </div>
+  div#main.container.text-responsive
+    img(src="/images/qr.svg" height="100em" width="100em" style="display: inline")
+    h1(style="display: inline") #{title} 
+    hr
+    <a href="/boxes">all boxes</a> -> <span class="text-lg">box #{code}</span>
+    form(action="/")
+      input(type="hidden" value=code name="code")
+      textarea(style="width: 100%; height: 20em" name="contents") #{output}
+      br
+      button.btn.btn-primary(type="submit" style="font-size: 1em !important;") Save

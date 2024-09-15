@@ -2,3 +2,4 @@ boxes.json
 node_modules
 */**.swp
 *.swp
+.idea

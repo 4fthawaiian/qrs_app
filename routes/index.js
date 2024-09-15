@@ -29,5 +29,8 @@ router.get('/boxes', function(req, res, next) {
 	.sort((a,b) => (Number(a.value.index) > Number(b.value.index)) ? 1 : ((Number(b.value.index) > Number(a.value.index)) ? -1 : 0))
 	res.render('boxes', { title: 'boxes', boxes: boxmap });
 });
+router.get('/test', function(req, res, next) {
+	res.render('test', { title: 'test' });
+});
 
 module.exports = router;
