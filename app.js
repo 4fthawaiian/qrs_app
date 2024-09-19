@@ -4,16 +4,34 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const axios = require('axios');
+const cors = require('cors');
+
+const { OAuth2Client } = require('google-auth-library');
+const oauth2Client = new OAuth2Client();
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
+app.use(cors());
+/* ======= */
+require('./passport');
+const cookieSession = require("cookie-session");
+const passport = require("passport");
+
+app.use(cookieSession({
+  name: 'google-auth-session',
+  keys: ['key1', 'key2']
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+/* ====== */
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
+app.us*(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
